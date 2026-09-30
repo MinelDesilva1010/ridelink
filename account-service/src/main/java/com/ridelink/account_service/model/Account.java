@@ -1,4 +1,4 @@
-package com.ridelink.accountservice.model;
+package com.ridelink.account_service.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

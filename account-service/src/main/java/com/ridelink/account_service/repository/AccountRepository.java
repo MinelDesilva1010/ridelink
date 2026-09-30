@@ -1,6 +1,6 @@
-package com.ridelink.accountservice.repository;
+package com.ridelink.account_service.repository;
 
-import com.ridelink.accountservice.model.Account;
+import com.ridelink.account_service.model.Account;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
