@@ -4,10 +4,16 @@ target/
 *.jar
 *.war
 *.ear
+HELP.md
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
 # Gradle
 build/
 .gradle/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
 # Spring Boot
 application-local.yml
@@ -18,18 +24,40 @@ application-local.properties
 *.env
 secrets.yml
 
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
 # IntelliJ IDEA
-.idea/
+.idea
 *.iml
 out/
-
-# VS Code
-.vscode/
 
 # Eclipse
 .project
 .classpath
-.settings/
+.settings
 
 # OS files
 .DS_Store
