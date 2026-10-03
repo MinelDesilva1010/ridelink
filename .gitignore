@@ -1,8 +1,28 @@
-HELP.md
+# Maven
 target/
+*.class
+*.jar
+*.war
+*.ear
+HELP.md
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+# Gradle
+build/
+.gradle/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Spring Boot
+application-local.yml
+application-local.properties
+
+# Environment & secrets
+.env
+*.env
+secrets.yml
 
 ### STS ###
 .apt_generated
@@ -25,9 +45,24 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
 ### VS Code ###
 .vscode/
+
+# IntelliJ IDEA
+.idea
+*.iml
+out/
+
+# Eclipse
+.project
+.classpath
+.settings
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
