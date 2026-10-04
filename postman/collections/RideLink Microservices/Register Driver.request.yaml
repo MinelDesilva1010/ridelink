@@ -1,0 +1,23 @@
+$kind: http-request
+url: http://localhost:8082/api/drivers
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "accountId": 1,
+      "name": "Alice",
+      "status": "AVAILABLE",
+      "currentLocation": "Colombo",
+      "serviceArea": "Downtown",
+      "vehicle": {
+        "make": "Toyota",
+        "model": "Prius",
+        "licensePlate": "CBE-1234",
+        "capacity": 4
+      }
+    }
+order: 1000

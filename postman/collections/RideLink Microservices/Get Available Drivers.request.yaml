@@ -1,0 +1,6 @@
+$kind: http-request
+url: http://localhost:8082/api/drivers/available?serviceArea=Downtown
+method: GET
+queryParams:
+  serviceArea: Downtown
+order: 2000
