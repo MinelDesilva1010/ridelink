@@ -4,7 +4,7 @@
     "description": "Postman collection for testing the RideLink backend microservices.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
-  "name": "2. Driver Service (8082)",
+  "name": "Driver Service (8082)",
   "item": [
     {
       "name": "Register Driver",
