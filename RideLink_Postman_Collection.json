@@ -1,0 +1,100 @@
+{
+  "info": {
+    "name": "RideLink Microservices",
+    "description": "Postman collection for testing the RideLink backend microservices.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Account Service (8081)",
+      "item": [
+        {
+          "name": "Register Account",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"driver@ridelink.com\",\n  \"passwordHash\": \"hashedpassword123\",\n  \"fullName\": \"Bob Smith\",\n  \"phoneNumber\": \"+123456789\",\n  \"role\": \"DRIVER\"\n}"
+            },
+            "url": {"raw": "http://localhost:8081/api/accounts/register", "protocol": "http", "host": ["localhost"], "port": "8081", "path": ["api", "accounts", "register"]}
+          }
+        },
+        {
+          "name": "Get All Accounts",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "http://localhost:8081/api/accounts", "protocol": "http", "host": ["localhost"], "port": "8081", "path": ["api", "accounts"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Driver Service (8082)",
+      "item": [
+        {
+          "name": "Register Driver",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accountId\": 1,\n  \"name\": \"Alice\",\n  \"status\": \"AVAILABLE\",\n  \"currentLocation\": \"Colombo\",\n  \"serviceArea\": \"Downtown\",\n  \"vehicle\": {\n    \"make\": \"Toyota\",\n    \"model\": \"Prius\",\n    \"licensePlate\": \"CBE-1234\",\n    \"capacity\": 4\n  }\n}"
+            },
+            "url": {"raw": "http://localhost:8082/api/drivers", "protocol": "http", "host": ["localhost"], "port": "8082", "path": ["api", "drivers"]}
+          }
+        },
+        {
+          "name": "Get Available Drivers",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "http://localhost:8082/api/drivers/available?serviceArea=Downtown", "protocol": "http", "host": ["localhost"], "port": "8082", "path": ["api", "drivers", "available"], "query": [{"key": "serviceArea", "value": "Downtown"}]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Ride Management Service (8083)",
+      "item": [
+        {
+          "name": "Request Ride",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"passengerId\": 2,\n  \"pickupLocation\": \"Downtown\",\n  \"destination\": \"Airport\"\n}"
+            },
+            "url": {"raw": "http://localhost:8083/api/rides/request", "protocol": "http", "host": ["localhost"], "port": "8083", "path": ["api", "rides", "request"]}
+          }
+        },
+        {
+          "name": "Get All Rides",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "http://localhost:8083/api/rides", "protocol": "http", "host": ["localhost"], "port": "8083", "path": ["api", "rides"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Fare & Payment Service (8084)",
+      "item": [
+        {
+          "name": "Estimate Fare",
+          "request": {
+            "method": "POST",
+            "url": {"raw": "http://localhost:8084/api/fares/estimate?rideId=1&distanceKm=12.5", "protocol": "http", "host": ["localhost"], "port": "8084", "path": ["api", "fares", "estimate"], "query": [{"key": "rideId", "value": "1"}, {"key": "distanceKm", "value": "12.5"}]}
+          }
+        },
+        {
+          "name": "Process Payment",
+          "request": {
+            "method": "POST",
+            "url": {"raw": "http://localhost:8084/api/fares/1/pay", "protocol": "http", "host": ["localhost"], "port": "8084", "path": ["api", "fares", "1", "pay"]}
+          }
+        }
+      ]
+    }
+  ]
+}
