@@ -32,7 +32,7 @@ public class DriverServiceTest {
     @BeforeEach
     void setUp() {
         driver = new Driver();
-        driver.setId(1L);
+        driver.setId("1a2b3c");
         driver.setName("John Doe");
         driver.setStatus(DriverStatus.AVAILABLE);
         driver.setServiceArea("Colombo");
@@ -51,12 +51,12 @@ public class DriverServiceTest {
 
     @Test
     void getDriverById_ShouldReturnDriver_WhenExists() {
-        when(driverRepository.findById(1L)).thenReturn(Optional.of(driver));
+        when(driverRepository.findById("1a2b3c")).thenReturn(Optional.of(driver));
 
-        Driver foundDriver = driverService.getDriverById(1L);
+        Driver foundDriver = driverService.getDriverById("1a2b3c");
 
         assertNotNull(foundDriver);
-        assertEquals(1L, foundDriver.getId());
+        assertEquals("1a2b3c", foundDriver.getId());
     }
 
     @Test

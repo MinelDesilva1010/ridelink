@@ -1,15 +1,10 @@
 package com.ridelink.driver.model;
 
-import jakarta.persistence.*;
 import lombok.Data;
 
-@Entity
+// No need for @Entity or @Id here since it will be embedded inside the Driver document
 @Data
 public class Vehicle {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     private String make;
     private String model;
     private String licensePlate;

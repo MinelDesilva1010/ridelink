@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/drivers")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class DriverController {
 
     private final DriverService driverService;
@@ -22,17 +23,17 @@ public class DriverController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Driver> getDriver(@PathVariable Long id) {
+    public ResponseEntity<Driver> getDriver(@PathVariable String id) {
         return ResponseEntity.ok(driverService.getDriverById(id));
     }
 
     @PatchMapping("/{id}/status")
-    public ResponseEntity<Driver> updateStatus(@PathVariable Long id, @RequestParam DriverStatus status) {
+    public ResponseEntity<Driver> updateStatus(@PathVariable String id, @RequestParam DriverStatus status) {
         return ResponseEntity.ok(driverService.updateDriverStatus(id, status));
     }
 
     @PatchMapping("/{id}/location")
-    public ResponseEntity<Driver> updateLocation(@PathVariable Long id, @RequestParam String location) {
+    public ResponseEntity<Driver> updateLocation(@PathVariable String id, @RequestParam String location) {
         return ResponseEntity.ok(driverService.updateLocation(id, location));
     }
 
