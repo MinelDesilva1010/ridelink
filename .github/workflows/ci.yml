@@ -1,26 +1,16 @@
-name: RideLink CI Pipeline
+name: Driver Service CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "feature/*" ]
   pull_request:
     branches: [ "main" ]
 
 jobs:
   build-and-test:
-    name: Build and Test
+    name: Build and Test Driver Service
     runs-on: ubuntu-latest
     
-    # A matrix strategy allows us to run this job concurrently for all 4 microservices!
-    strategy:
-      matrix:
-        service: [
-          'ridelink-account-service', 
-          'ridelink-driver-service', 
-          'ridelink-ride-service', 
-          'ridelink-fare-service'
-        ]
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -33,9 +23,7 @@ jobs:
         cache: maven
         
     - name: Grant execute permission for Maven Wrapper
-      working-directory: ./${{ matrix.service }}
       run: chmod +x mvnw
       
     - name: Build and run tests
-      working-directory: ./${{ matrix.service }}
       run: ./mvnw clean test
