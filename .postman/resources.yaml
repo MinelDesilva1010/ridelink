@@ -1,0 +1,10 @@
+# Use this workspace to collaborate
+workspace:
+  id: 9fa6b22e-5ff0-487b-855a-c953d53f2202
+
+localResources:
+  collections: []
+
+cloudResources:
+  collections:
+    ../postman/collections/RideLink Microservices: d722a6de-31ae-465c-ad3a-44ce1434e878

@@ -18,17 +18,17 @@ public class DriverService {
         return driverRepository.save(driver);
     }
 
-    public Driver getDriverById(Long id) {
+    public Driver getDriverById(String id) {
         return driverRepository.findById(id).orElseThrow(() -> new RuntimeException("Driver not found"));
     }
 
-    public Driver updateDriverStatus(Long id, DriverStatus newStatus) {
+    public Driver updateDriverStatus(String id, DriverStatus newStatus) {
         Driver driver = getDriverById(id);
         driver.setStatus(newStatus);
         return driverRepository.save(driver);
     }
 
-    public Driver updateLocation(Long id, String newLocation) {
+    public Driver updateLocation(String id, String newLocation) {
         Driver driver = getDriverById(id);
         driver.setCurrentLocation(newLocation);
         return driverRepository.save(driver);
