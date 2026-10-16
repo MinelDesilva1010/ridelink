@@ -4,7 +4,7 @@ import org.bson.Document;
 
 public class TestMongo {
     public static void main(String[] args) {
-        String uri = "mongodb+srv://cvideshana_db_user:chrishean@cluster0.c4awtjj.mongodb.net/RideLink?appName=Cluster0";
+        String uri = "mongodb+srv://cvideshana_db_user:chrisheanv24@cluster0.iptz3dy.mongodb.net/ridelink_db?retryWrites=true&w=majority";
         try (MongoClient mongoClient = MongoClients.create(uri)) {
             System.out.println("Connecting...");
             Document ping = new Document("ping", 1);

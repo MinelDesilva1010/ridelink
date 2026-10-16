@@ -1,10 +1,10 @@
 package com.ridelink.driver.model;
 
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import lombok.Data;
 
-@Document(collection = "Default")
+@Document(collection = "drivers")
 @Data
 public class Driver {
     @Id
@@ -22,6 +22,5 @@ public class Driver {
 
     private String serviceArea;
 
-    // In MongoDB, the Vehicle can be embedded directly inside the Driver document
     private Vehicle vehicle;
 }
