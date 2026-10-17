@@ -6,9 +6,8 @@ spring:
     name: account-service
   data:
     mongodb:
-      uri: ${MONGO_URI:mongodb://localhost:27017}
+      uri: ${MONGO_URI:mongodb+srv://ridelink:ridelink123@cluster0.a7sm8rg.mongodb.net/ridelink-accounts?retryWrites=true&w=majority}
       database: ridelink-accounts
-
 jwt:
   secret: ${JWT_SECRET:mydefaultsecretkey123456789012345}
   expiration: 86400000

@@ -1,5 +1,9 @@
-# Maven
+HELP.md
 target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
 *.class
 *.jar
 *.war
@@ -8,6 +12,8 @@ target/
 # Gradle
 build/
 .gradle/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
 # Spring Boot
 application-local.yml
@@ -18,10 +24,28 @@ application-local.properties
 *.env
 secrets.yml
 
+# STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
 # IntelliJ IDEA
 .idea/
+*.iws
 *.iml
+*.ipr
 out/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 
 # VS Code
 .vscode/
