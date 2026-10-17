@@ -1,0 +1,7 @@
+com\ridelink\driver\service\DriverService.class
+com\ridelink\driver\controller\DriverController.class
+com\ridelink\driver\repository\DriverRepository.class
+com\ridelink\driver\model\Driver.class
+com\ridelink\driver\DriverServiceApplication.class
+com\ridelink\driver\model\DriverStatus.class
+com\ridelink\driver\model\Vehicle.class
