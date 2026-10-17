@@ -6,8 +6,8 @@ spring:
     name: account-service
   data:
     mongodb:
-      uri: ${MONGO_URI:mongodb://localhost:27017}
-      database: ridelink-accounts
+      uri: ${MONGO_URI:mongodb+srv://ridelink:1234@cluster0.a7sm8rg.mongodb.net/ridelink_accounts_db?retryWrites=true&w=majority}
+      database: ridelink_accounts_db
 
 jwt:
   secret: ${JWT_SECRET:mydefaultsecretkey123456789012345}
