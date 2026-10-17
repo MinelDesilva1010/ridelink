@@ -3,16 +3,18 @@ package com.ridelink.driver.service;
 import com.ridelink.driver.model.Driver;
 import com.ridelink.driver.model.DriverStatus;
 import com.ridelink.driver.repository.DriverRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class DriverService {
 
     private final DriverRepository driverRepository;
+
+    public DriverService(DriverRepository driverRepository) {
+        this.driverRepository = driverRepository;
+    }
 
     public Driver registerDriver(Driver driver) {
         return driverRepository.save(driver);

@@ -3,7 +3,6 @@ package com.ridelink.driver.controller;
 import com.ridelink.driver.model.Driver;
 import com.ridelink.driver.model.DriverStatus;
 import com.ridelink.driver.service.DriverService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,10 +10,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/drivers")
-@RequiredArgsConstructor
 public class DriverController {
 
     private final DriverService driverService;
+
+    public DriverController(DriverService driverService) {
+        this.driverService = driverService;
+    }
 
     @PostMapping
     public ResponseEntity<Driver> registerDriver(@RequestBody Driver driver) {
